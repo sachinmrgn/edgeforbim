@@ -3,7 +3,56 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<meta name="robots" content="noindex, nofollow">
-	
+	<style>
+		/* Minimal DateTimePicker Styling */
+.bootstrap-datetimepicker-widget {
+    font-family: 'Courier New', monospace;
+    border: 1px solid #ccc;
+    background: white;
+    padding: 10px;
+}
+
+.bootstrap-datetimepicker-widget .picker-switch {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.bootstrap-datetimepicker-widget table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bootstrap-datetimepicker-widget table th.dow {
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bootstrap-datetimepicker-widget table td {
+    padding: 5px;
+    text-align: center;
+}
+
+.bootstrap-datetimepicker-widget table td.day.old,
+.bootstrap-datetimepicker-widget table td.day.new {
+    color: #999;
+}
+
+.bootstrap-datetimepicker-widget table td.day.today {
+    font-weight: bold;
+    background-color: #f0f0f0;
+}
+
+/* Hide navigation arrows and clear button */
+.bootstrap-datetimepicker-widget .prev,
+.bootstrap-datetimepicker-widget .next,
+.bootstrap-datetimepicker-widget .accordion-toggle {
+    display: none;
+}
+	</style>
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 	<!-- Google tag (gtag.js) consent mode dataLayer added by Site Kit -->
 <script id="google_gtagjs-js-consent-mode-data-layer">
 window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
