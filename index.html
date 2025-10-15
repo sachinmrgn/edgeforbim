@@ -42,69 +42,69 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 /*! This file is auto-generated */
 !function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
 </script>
-<style id="wp-emoji-styles-inline-css">
-
-	img.wp-smiley, img.emoji {
-		display: inline !important;
-		border: none !important;
-		box-shadow: none !important;
-		height: 1em !important;
-		width: 1em !important;
-		margin: 0 0.07em !important;
-		vertical-align: -0.1em !important;
-		background: none !important;
-		padding: 0 !important;
-	}
-	/* Calendar Popup Styling */
+	<style>/* Calendar Popup Styling - Adaptive Version */
 .input-group.date {
   position: relative;
-  width: 60%;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .fserv-input-text.form-control[data-date-format="MM/DD/YYYY"] {
   cursor: pointer;
   background-color: white;
+  width: 100%;
+  min-height: 44px; /* Better touch targets */
+  font-size: clamp(14px, 2vw, 16px); /* Responsive font size */
 }
 
 .input-group-addon {
   position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   background: transparent;
   border: none;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: 8px;
   cursor: pointer;
   z-index: 2;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.input-group-addon:hover {
+  background-color: rgba(25, 55, 104, 0.1);
 }
 
 .glyphicon-calendar {
   color: #193768;
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 18px);
+  transition: color 0.2s ease;
 }
 
-.input-group-addon:hover .glyphicon-calendar {
-  color: #1ABC9C;
-}
-
-/* Bootstrap Datepicker Override Styles */
+/* Bootstrap Datepicker Adaptive Styles */
 .datepicker {
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   border: 1px solid #e0e0e0;
-  font-family: Verdana, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
+  max-width: 95vw;
+  width: 100% !important;
 }
 
 .datepicker table {
   width: 100%;
+  table-layout: fixed;
 }
 
 .datepicker thead th {
   background-color: #193768;
   color: white;
   border-radius: 0;
+  padding: clamp(8px, 2vw, 12px) clamp(4px, 1vw, 8px);
+  font-size: clamp(12px, 1.5vw, 14px);
 }
 
 .datepicker thead th.prev,
@@ -112,106 +112,211 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 .datepicker thead th.datepicker-switch {
   background-color: #193768;
   color: white;
+  transition: background-color 0.2s ease;
+}
+
+.datepicker thead th.prev:hover,
+.datepicker thead th.next:hover {
+  background-color: #152c55;
 }
 
 .datepicker thead th.dow {
   background-color: #f8f9fa;
   color: #193768;
   font-weight: 600;
-  padding: 8px 0;
+  padding: clamp(6px, 1.5vw, 10px) 0;
+  font-size: clamp(11px, 1.5vw, 13px);
 }
 
 .datepicker table tr td.day {
   color: #333;
-  padding: 8px 0;
-  border-radius: 4px;
+  padding: clamp(6px, 1.5vw, 10px) 0;
+  border-radius: 6px;
   transition: all 0.2s ease;
+  font-size: clamp(12px, 1.5vw, 14px);
+  min-width: 40px;
+  height: 40px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
 }
 
 .datepicker table tr td.day:hover {
   background-color: #e9ecef;
   color: #193768;
+  transform: scale(1.05);
 }
 
 .datepicker table tr td.day.active {
   background-color: #193768 !important;
   color: white !important;
+  font-weight: 600;
 }
 
 .datepicker table tr td.day.today {
   background-color: #1ABC9C;
   color: white;
   font-weight: 600;
+  position: relative;
 }
 
 .datepicker table tr td.day.today:hover {
   background-color: #17a589;
+  transform: scale(1.05);
 }
 
-.datepicker .datepicker-days table tbody tr td.old,
-.datepicker .datepicker-days table tbody tr td.new {
-  color: #adb5bd;
-}
-
-.datepicker .datepicker-months table tbody tr td month.active,
-.datepicker .datepicker-years table tbody tr td year.active {
+.datepicker table tr td.day.today:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 6px;
+  height: 6px;
   background-color: #193768;
-  color: white;
+  border-radius: 50%;
+}
+
+.datepicker table tr td.old,
+.datepicker table tr td.new {
+  color: #adb5bd;
+  opacity: 0.6;
 }
 
 /* Month/Year Navigation */
 .datepicker .datepicker-months table tbody tr td month,
 .datepicker .datepicker-years table tbody tr td year {
-  padding: 8px;
-  border-radius: 4px;
+  padding: clamp(8px, 2vw, 12px);
+  border-radius: 6px;
   transition: all 0.2s ease;
+  font-size: clamp(12px, 1.5vw, 14px);
+  margin: 2px;
 }
 
 .datepicker .datepicker-months table tbody tr td month:hover,
 .datepicker .datepicker-years table tbody tr td year:hover {
   background-color: #e9ecef;
   color: #193768;
+  transform: scale(1.05);
 }
 
-/* Datepicker Header */
+/* Datepicker Header Improvements */
 .datepicker .datepicker-days thead tr:first-child th {
   background-color: #193768;
   color: white;
-  border-radius: 8px 8px 0 0;
+  border-radius: 12px 12px 0 0;
+  padding: clamp(10px, 2vw, 16px) clamp(8px, 1.5vw, 12px);
 }
 
-.datepicker .datepicker-days thead tr:first-child th:hover {
-  background-color: #152c55;
-}
-
-/* Focus States */
+/* Focus States for Accessibility */
 .datepicker table tr td.day:focus {
-  outline: 2px solid #1ABC9C;
+  outline: 3px solid #1ABC9C;
   outline-offset: 2px;
+  z-index: 1;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 900px) {
+/* Enhanced Responsive Design */
+@media screen and (max-width: 768px) {
   .input-group.date {
-    width: 100%;
+    max-width: 100%;
   }
   
   .datepicker {
-    width: 280px !important;
+    width: 100% !important;
+    max-width: 95vw;
     left: 50% !important;
     transform: translateX(-50%);
+    position: fixed !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .datepicker table tr td.day {
+    min-width: 35px;
+    height: 35px;
+    font-size: 13px;
+  }
+  
+  .datepicker thead th {
+    padding: 10px 6px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .datepicker {
+    border-radius: 8px;
+    max-height: 70vh;
+  }
+  
+  .datepicker table tr td.day {
+    min-width: 30px;
+    height: 30px;
+    font-size: 12px;
+    padding: 4px 0;
+    margin: 1px;
+  }
+  
+  .datepicker thead th {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+  
+  .datepicker thead th.dow {
+    padding: 6px 0;
+    font-size: 11px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .datepicker {
+    border: 2px solid #000;
+  }
+  
+  .datepicker table tr td.day {
+    border: 1px solid #ccc;
+  }
+  
+  .datepicker table tr td.day.active {
+    border: 2px solid #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .datepicker table tr td.day,
+  .datepicker thead th,
+  .datepicker .datepicker-months table tbody tr td month,
+  .datepicker .datepicker-years table tbody tr td year {
+    transition: none;
+    transform: none;
   }
 }
 
 /* Ensure datepicker appears above other elements */
 .datepicker.dropdown-menu {
   z-index: 9999 !important;
+  animation: fadeInScale 0.2s ease-out;
 }
 
-/* Calendar icon positioning fix */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Calendar icon improvements */
 .glyphicon {
   position: relative;
-  top: 0;
   display: inline-block;
   font-family: 'Glyphicons Halflings';
   font-style: normal;
@@ -229,17 +334,72 @@ input[type="text"][data-date-format="MM/DD/YYYY"]::-webkit-calendar-picker-indic
   display: none;
 }
 
-/* Hover state for the entire date input group */
+/* Enhanced input states */
 .input-group.date:hover .fserv-input-text {
   border-bottom-color: #1ABC9C;
+  box-shadow: 0 2px 0 0 rgba(26, 188, 156, 0.2);
 }
 
-/* Active state */
 .input-group.date .fserv-input-text:focus {
   border-bottom: 3px solid #1ABC9C;
   color: #1ABC9C;
   font-weight: 600;
+  box-shadow: 0 4px 8px rgba(26, 188, 156, 0.2);
 }
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .datepicker {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .datepicker thead th.dow {
+    background-color: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .datepicker table tr td.day {
+    color: #e2e8f0;
+  }
+  
+  .datepicker table tr td.day:hover {
+    background-color: #4a5568;
+    color: #ffffff;
+  }
+  
+  .datepicker table tr td.old,
+  .datepicker table tr td.new {
+    color: #718096;
+  }
+}
+
+/* Print styles */
+@media print {
+  .input-group-addon,
+  .glyphicon-calendar {
+    display: none;
+  }
+  
+  .datepicker {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
 </style>
 <link rel="stylesheet" id="betterdocs-blocks-category-slate-layout-css" href="https://edgeforbim.com/wp-content/plugins/betterdocs/assets/blocks/category-slate-layout/default.css?ver=4.2.1" media="all">
 <style id="global-styles-inline-css">
