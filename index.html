@@ -55,6 +55,191 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 		background: none !important;
 		padding: 0 !important;
 	}
+	/* Calendar Popup Styling */
+.input-group.date {
+  position: relative;
+  width: 60%;
+}
+
+.fserv-input-text.form-control[data-date-format="MM/DD/YYYY"] {
+  cursor: pointer;
+  background-color: white;
+}
+
+.input-group-addon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.glyphicon-calendar {
+  color: #193768;
+  font-size: 16px;
+}
+
+.input-group-addon:hover .glyphicon-calendar {
+  color: #1ABC9C;
+}
+
+/* Bootstrap Datepicker Override Styles */
+.datepicker {
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e0e0e0;
+  font-family: Verdana, sans-serif;
+}
+
+.datepicker table {
+  width: 100%;
+}
+
+.datepicker thead th {
+  background-color: #193768;
+  color: white;
+  border-radius: 0;
+}
+
+.datepicker thead th.prev,
+.datepicker thead th.next,
+.datepicker thead th.datepicker-switch {
+  background-color: #193768;
+  color: white;
+}
+
+.datepicker thead th.dow {
+  background-color: #f8f9fa;
+  color: #193768;
+  font-weight: 600;
+  padding: 8px 0;
+}
+
+.datepicker table tr td.day {
+  color: #333;
+  padding: 8px 0;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.datepicker table tr td.day:hover {
+  background-color: #e9ecef;
+  color: #193768;
+}
+
+.datepicker table tr td.day.active {
+  background-color: #193768 !important;
+  color: white !important;
+}
+
+.datepicker table tr td.day.today {
+  background-color: #1ABC9C;
+  color: white;
+  font-weight: 600;
+}
+
+.datepicker table tr td.day.today:hover {
+  background-color: #17a589;
+}
+
+.datepicker .datepicker-days table tbody tr td.old,
+.datepicker .datepicker-days table tbody tr td.new {
+  color: #adb5bd;
+}
+
+.datepicker .datepicker-months table tbody tr td month.active,
+.datepicker .datepicker-years table tbody tr td year.active {
+  background-color: #193768;
+  color: white;
+}
+
+/* Month/Year Navigation */
+.datepicker .datepicker-months table tbody tr td month,
+.datepicker .datepicker-years table tbody tr td year {
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.datepicker .datepicker-months table tbody tr td month:hover,
+.datepicker .datepicker-years table tbody tr td year:hover {
+  background-color: #e9ecef;
+  color: #193768;
+}
+
+/* Datepicker Header */
+.datepicker .datepicker-days thead tr:first-child th {
+  background-color: #193768;
+  color: white;
+  border-radius: 8px 8px 0 0;
+}
+
+.datepicker .datepicker-days thead tr:first-child th:hover {
+  background-color: #152c55;
+}
+
+/* Focus States */
+.datepicker table tr td.day:focus {
+  outline: 2px solid #1ABC9C;
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .input-group.date {
+    width: 100%;
+  }
+  
+  .datepicker {
+    width: 280px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+}
+
+/* Ensure datepicker appears above other elements */
+.datepicker.dropdown-menu {
+  z-index: 9999 !important;
+}
+
+/* Calendar icon positioning fix */
+.glyphicon {
+  position: relative;
+  top: 0;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glyphicon-calendar:before {
+  content: "\e109";
+}
+
+/* Remove default browser calendar icon */
+input[type="text"][data-date-format="MM/DD/YYYY"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+/* Hover state for the entire date input group */
+.input-group.date:hover .fserv-input-text {
+  border-bottom-color: #1ABC9C;
+}
+
+/* Active state */
+.input-group.date .fserv-input-text:focus {
+  border-bottom: 3px solid #1ABC9C;
+  color: #1ABC9C;
+  font-weight: 600;
+}
 </style>
 <link rel="stylesheet" id="betterdocs-blocks-category-slate-layout-css" href="https://edgeforbim.com/wp-content/plugins/betterdocs/assets/blocks/category-slate-layout/default.css?ver=4.2.1" media="all">
 <style id="global-styles-inline-css">
